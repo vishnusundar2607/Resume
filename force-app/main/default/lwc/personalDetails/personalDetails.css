@@ -1,11 +1,11 @@
 .full{
-    background: white;
+    background :rgb(40, 40, 41);
+    border-radius: 12px;
 }
 
-/* .ShowBorder:hover {
+.ShowBorder:hover {
     border: 2px solid rgb(22, 156, 213);
     border-radius: 12px;
     background :rgb(40, 40, 41);
     transform: scale(1.07);
   }
-   */

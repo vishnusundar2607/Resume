@@ -1,18 +1,17 @@
 <template>
-    <div class='slds-p-left_xx-large'>
+    <div class='full slds-p-around_large'>
         <template for:each={details} for:item="detail">
-            <div class="demo-only slds-size_3-of-4 slds-p-around_small ShowBorder" key={detail.name}>
-                <div class="slds-media slds-media_center slds-media_large">
+            <div class="demo-only slds-size_4-of-4 slds-p-around_small ShowBorder" key={detail.name}>
+                <div class="slds-media slds-media_center slds-media_large" data-name={detail.name} onclick={checkvalue}>
                     <div class="slds-media__figure">
-                        <img onclick={checkvalue} src={detail.IconName} alt="Girl in a jacket" width="32" height="32">
+                        <img data-name={detail.name} src={detail.IconName} alt="Girl in a jacket" width="32" height="32">
                     </div>
                     <div class="slds-media__body">
-                        <p onclick={checkvalue}>{detail.value}</p>
+                        <p data-name={detail.name}>{detail.value}</p>
                     </div>
                 </div>
             </div>
         </template>
     </div>
 
-    <lightning-button name = 'test' label='test' onclick={checkvalue}></lightning-button>
 </template>
