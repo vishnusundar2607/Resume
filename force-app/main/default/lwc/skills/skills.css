@@ -1,0 +1,17 @@
+:host {
+  --sds-c-button-neutral-color-background: rgb(22, 156, 213);
+  --sds-c-button-neutral-color-border: rgb(22, 156, 213);
+  --sds-c-button-radius-border: 1.75rem;
+  --sds-c-button-text-color: white;
+  --sds-c-button-neutral-color-background-hover :white;
+  
+}
+
+.slds-button_neutral {
+  margin: 10px 5px;
+}
+
+.header {
+  font-size: 28px;
+  font-weight: bold;
+}

@@ -1,0 +1,25 @@
+.Profile-Photo {
+  display: block;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 10px solid rgb(22, 156, 213);
+  object-fit: cover;
+}
+
+.Profile-Photo:hover {
+  border: 5px solid rgb(22, 156, 213);
+}
+
+.full {
+  border: 5px solid rgb(22, 156, 213);
+  border-radius: 25px;
+}
+
+.Profile-Text h1 {
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
+  line-height: 56px;
+  font-family: "Poppins", Helvetica, sans-serif;
+}
