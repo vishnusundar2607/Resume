@@ -1,29 +1,47 @@
 <template>
     <div class='full slds-p-around_large'>
-        <lightning-record-edit-form object-api-name="Contact">
+        <lightning-record-edit-form object-api-name="Contact" onsuccess={handleSuccess} onerror={handleSuccess}>
             <h1 class="header">How Can I Help You?</h1>
-            <lightning-layout multiple-rows>
-                <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
-                    padding="around-small">
-                    <lightning-input-field variant='standard' field-name="FirstName">
-                    </lightning-input-field>
-                    <lightning-input-field variant='standard' field-name="LastName">
-                    </lightning-input-field>
-                    <lightning-input-field variant='standard' required field-name="Email">
-                    </lightning-input-field>
-                </lightning-layout-item>
-                <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
-                    padding="around-small">
-                    <lightning-input-field variant='standard' required field-name="Message__c">
-                    </lightning-input-field>
-                    <div class="slds-p-around_x-large slds-align_absolute-center">
-                        <lightning-button type="submit" label="Send Message">
-                        </lightning-button>
-                    </div>
-                </lightning-layout-item>
-            </lightning-layout>
-        </lightning-record-edit-form>
-    </div>
+            <template if:false={ShowMessgae}>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
+                        padding="horizontal-small">
+                        <lightning-input-field variant='standard' field-name="FirstName">
+                        </lightning-input-field>
+                        <lightning-input-field variant='standard' field-name="LastName">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
+                        padding="horizontal-small">
+                        <lightning-input-field variant='standard' field-name="Phone">
+                        </lightning-input-field>
+                        <lightning-input-field variant='standard' required field-name="Email">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+                        large-device-size="12" padding="horizontal-small">
+                        <lightning-input-field variant='standard' required field-name="Message__c">
+                        </lightning-input-field>
+                        <div class="slds-p-around_large slds-align_absolute-center">
+                            <lightning-button variant="brand" type="submit" name="save" label="Send Message"
+                                onclick={ToggleShowMessgae}>
+                            </lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
 
-    
+        </lightning-record-edit-form>
+
+        <template if:true={ShowMessgae}>
+            <p class="slds-p-around_x-large">
+                Your message saved successfully.Thank you for showing interest in my profile. Will contact you as soon
+                as possible.
+            </p>
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" name="save" label="Send Another Message" onclick={ToggleShowMessgae}>
+                </lightning-button>
+            </div>
+        </template>
+    </div>
 </template>

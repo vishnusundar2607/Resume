@@ -1,16 +1,14 @@
 import { LightningElement, wire } from 'lwc';
 import messageChannel from '@salesforce/messageChannel/MapMessageChannel__c';
 import { publish, MessageContext } from 'lightning/messageService'
-import PROFILE_PIC from '@salesforce/resourceUrl/testsvg';
-import PhoneIcon from '@salesforce/resourceUrl/PhoneIcon';
 import RESUME_ICONS from '@salesforce/resourceUrl/ResumeIcons';
-export default class PersonalDetails extends LightningElement {
-    profilepic = `${PROFILE_PIC}#logo`
-    PHONE_ICON = PhoneIcon
-    ResumeIcons = RESUME_ICONS + '/Phone.png';
+import { NavigationMixin } from 'lightning/navigation';
+export default class PersonalDetails extends NavigationMixin(LightningElement) {
+
+
     details = [{ name: 'Phone', IconName: RESUME_ICONS + '/Phone.png', value: '+91 99-444-75300' },
     { name: 'Email', IconName: RESUME_ICONS + '/Email.png', value: 'vishnusundar2607@gmail.com' },
-    { name: 'Skype', IconName: RESUME_ICONS + '/Skype.png', value: 'live:vishnusundar2607' },
+    { name: 'Skype', IconName: RESUME_ICONS + '/Skype.png', value: 'vishnusundar2607' },
     { name: 'LinkedIn', IconName: RESUME_ICONS + '/Linkedin.png', value: 'linkedin.com/in/vishnusundar2607' },
     { name: 'Trailhead', IconName: RESUME_ICONS + '/Trailhead.png', value: 'trailblazer.me/id/vishnusundar2607' },
     { name: 'GitHub', IconName: RESUME_ICONS + '/GitHub.png', value: 'github.com/vishnusundar2607/Resume' },
@@ -22,19 +20,48 @@ export default class PersonalDetails extends LightningElement {
     @wire(MessageContext)
     messageContext;
 
-    checkvalue(event) {
-
-        /* console.log(this.details);
-        console.log(this.ResumeIcons);
-        console.log(details); */
-        console.log(event.target.dataset.name);
+    ShowData(event) {
+        event.preventDefault();
+        event.stopPropagation();
 
         let message = { messageText: event.target.dataset.name };
+        switch (event.target.dataset.name) {
+            case 'LinkedIn': {
+                this[NavigationMixin.Navigate]({
+                    type: 'standard__webPage',
+                    attributes: {
+                        url: 'https://linkedin.com/in/vishnusundar2607',
+                    },
+                });
+                break;
+            }
+            case 'Trailhead': {
+                this[NavigationMixin.Navigate]({
+                    type: 'standard__webPage',
+                    attributes: {
+                        url: 'https://trailblazer.me/id/vishnusundar2607',
+                    },
+                });
+                break;
+            }
+            case 'GitHub': {
+                this[NavigationMixin.Navigate]({
+                    type: 'standard__webPage',
+                    attributes: {
+                        url: 'https://github.com/vishnusundar2607/Resume',
+                    },
+                });
+                break;
+            }
+            case 'Home Address': {
+                publish(this.messageContext, messageChannel, message);
+                break;
+            }
+            case 'Current Address': {
+                publish(this.messageContext, messageChannel, message);
+                break;
+            }
 
-        if (event.target.dataset.name == 'Home Address') {
-            publish(this.messageContext, messageChannel, message);
-        } else if (event.target.dataset.name == 'Current Address') {
-            publish(this.messageContext, messageChannel, message);
         }
 
     }

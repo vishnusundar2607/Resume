@@ -1,3 +1,18 @@
 import { LightningElement } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent'
+export default class RecuriterMessage extends LightningElement {
 
-export default class RecuriterMessage extends LightningElement {}
+    ShowMessgae = false;
+    handleSuccess() {
+        const event = new ShowToastEvent({
+            title: 'Your message saved succesfully',
+            message: 'Email sent to your email address',
+        });
+        this.dispatchEvent(event);
+    }
+
+    ToggleShowMessgae() {
+        this.ShowMessgae = !this.ShowMessgae;
+    }
+
+}
