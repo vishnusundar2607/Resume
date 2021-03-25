@@ -1,0 +1,22 @@
+<template>
+    <h1 class='header'>Certificates</h1>
+    <lightning-layout multiple-rows="true">
+        <template for:each={certArray} for:item='cert'>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" medium-device-size="6"
+                large-device-size="6" key={cert.name}>
+                <lightning-layout multiple-rows class="full slds-size_1-of-1">
+                    <lightning-layout-item size="12" small-device-size="12" medium-device-size="3" large-device-size="3"
+                        padding="around-small" class="slds-align_absolute-center">
+                        <img src={cert.IconName} alt="Profile Photo" class="Certificate-Photo" />
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="12" medium-device-size="9" large-device-size="9"
+                        padding="around-small">
+                        <div class="slds-text-heading_small tds-text_bold">{cert.name}</div>
+                        <div>Crenditial ID : {cert.credentialId}</div>
+                        <p> Date : 12/19/2020</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template>

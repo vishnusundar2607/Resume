@@ -1,0 +1,26 @@
+.tds-text_bold {
+    font-weight: bold;
+    color: white;
+}
+
+.full {
+    background: rgb(40, 40, 41);
+    border: 2px solid rgb(40, 40, 41);
+    border-radius: 8px;
+}
+
+.full:hover {
+    border-color: rgb(22, 156, 213);
+}
+
+.header {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.Certificate-Photo {
+    display: block;
+    width: 450px;
+    height: auto;
+    object-fit: cover;
+  }
