@@ -16,4 +16,14 @@ export default class Profileheader extends NavigationMixin(LightningElement) {
             },
         });
     }
+
+    viewContactMePage() {
+        this[NavigationMixin.Navigate]({
+            type: 'comm__namedPage',
+            attributes: {
+                name: 'Contact_me__c'
+            },
+        });
+
+    }
 }

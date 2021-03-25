@@ -2,13 +2,13 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>51.0</apiVersion>
     <isExposed>true</isExposed>
-    <masterLabel>Profile Header</masterLabel>
-    <description>This is a Profile Header component.</description>
+    <masterLabel>Expertise</masterLabel>
+    <description>This is a Expertise Component</description>
     <targets>
-        <target>lightning__RecordPage</target>
         <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
         <target>lightning__HomePage</target>
-        <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
     </targets>
 </LightningComponentBundle>

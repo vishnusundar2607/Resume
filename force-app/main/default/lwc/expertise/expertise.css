@@ -1,0 +1,20 @@
+.header {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.slds-progress-bar {
+    border: 3px solid rgb(68, 68, 69);
+    background: rgb(68, 68, 69);
+}
+
+.full {
+    background: rgb(40, 40, 41);
+    border: 2px solid rgb(40, 40, 41);
+    border-radius: 8px;
+}
+
+.tds-text_bold {
+    font-weight: bold;
+    color: white;
+}

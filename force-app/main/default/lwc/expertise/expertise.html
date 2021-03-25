@@ -1,0 +1,17 @@
+<template>
+    <h1 class='header'>Expertise</h1>
+    <lightning-layout multiple-rows="true">
+        <template for:each={ExpertiseList} for:item='expertise'>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" medium-device-size="6"
+                large-device-size="6" key={expertise.name}>
+                <div class="slds-text-heading_small tds-text_bold slds-p-around_xx-small">{expertise.name}</div>
+                <div class="slds-progress-bar slds-progress-bar_circular slds-progress-bar_large" aria-valuemin="0"
+                    aria-valuemax="100" aria-valuenow="75" role="progressbar">
+                    <span class="slds-progress-bar__value" style={expertise.progressLevel}>
+                        <span class="slds-assistive-text">Progress: 75%</span>
+                    </span>
+                </div>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template>
