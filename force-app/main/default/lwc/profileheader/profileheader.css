@@ -23,3 +23,26 @@
   line-height: 56px;
   font-family: "Poppins", Helvetica, sans-serif;
 }
+
+:host {
+
+  --sds-c-button-neutral-color-background: rgb(40, 40, 41);
+  --sds-c-button-neutral-color-background-hover: rgb(22, 156, 213);
+  --sds-c-button-neutral-color-border-hover: rgb(22, 156, 213);
+  --sds-c-button-neutral-color-border: rgb(22, 156, 213);
+  --sds-c-button-text-color: white;
+  --sds-c-button-text-color-hover: White;
+
+  --sds-c-button-brand-color-background: rgb(40, 40, 41);
+  --sds-c-button-brand-color-border: White;
+  --sds-c-button-brand-color-background-hover: white;
+  --sds-c-button-brand-text-color-hover: Black;
+  --sds-c-button-brand-color-border-hover: white;
+
+
+  --sds-c-button-sizing-border: 2px;
+  --sds-c-button-radius-border: 1rem;
+
+
+
+}

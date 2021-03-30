@@ -3,3 +3,7 @@
     border: 2px solid rgb(22, 156, 213);
    /*  border-radius: 12px; */
   }
+
+  .full iframe {
+      border-radius: 50px;
+  }
