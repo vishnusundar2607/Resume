@@ -11,4 +11,9 @@
         <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>
     </targets>
+    <targetConfigs>
+      <targetConfig targets="lightning__AppPage, lightning__HomePage,lightningCommunity__Default">
+          <property name="Professionalsummary" type="string" />
+      </targetConfig>
+  </targetConfigs>
 </LightningComponentBundle>

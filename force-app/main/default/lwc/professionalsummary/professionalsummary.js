@@ -1,16 +1,16 @@
-import { LightningElement ,wire} from 'lwc';
+import { LightningElement ,wire,api} from 'lwc';
 import PROFESSIONAL_SUMMARY from '@salesforce/apex/resumeController.getProjectId';
 import PROJECT_POINTS from '@salesforce/apex/resumeController.getProjectPoints';
 export default class Professionalsummary extends LightningElement {
 
-    Professionalsummary = 'PROFESSIONAL SUMMARY';
+    @api Professionalsummary = 'PROFESSIONAL SUMMARY';
     summaryRecord =[];
     name
     point
     projectId
     ProjectPoint
     
-    @wire(PROFESSIONAL_SUMMARY,{projectName:'PROFESSIONAL SUMMARY'}) Summary({error,data}){
+    @wire(PROFESSIONAL_SUMMARY,{projectName: '$Professionalsummary'}) Summary({error,data}){
         if(data){
             this.name = data.Name;
             this.point = data.Summary_Points__c;
