@@ -1,11 +1,14 @@
 .full{
-    background :rgb(40, 40, 41);
-    border-radius: 12px;
+background :rgb(40, 40, 41);
+border-radius: 12px;
+
+
 }
 
 .ShowBorder:hover {
-    border: 2px solid rgb(22, 156, 213);
-    border-radius: 12px;
-    background :rgb(40, 40, 41);
-    transform: scale(1.07);
-  }
+border: 2px solid rgb(22, 156, 213);
+border-radius: 12px;
+/* background :rgb(40, 40, 41); */
+box-shadow: 0 0 50px rgb(22, 156, 213);
+color: white;
+}

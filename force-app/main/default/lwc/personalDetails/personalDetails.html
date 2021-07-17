@@ -3,12 +3,12 @@
         <template for:each={details} for:item="detail">
             <div class="demo-only slds-size_4-of-4 slds-p-around_small ShowBorder" key={detail.name}>
                 <div class="slds-media slds-media_center slds-media_large" data-name={detail.name} onclick={ShowData}>
-                    <div class="slds-media__figure">
+                    <div class="slds-media__figure icon">
                         
-                        <img data-name={detail.name} src={detail.IconName} alt="Girl in a jacket" width="32" height="32">
+                        <img class="icon" data-name={detail.name} src={detail.IconName} alt="Girl in a jacket" width="32" height="32">
                         <span class="slds-assistive-text">Person name</span>
                     </div>
-                    <div class="slds-media__body">
+                    <div class="slds-media__body textvalue">
                         <p data-name={detail.name}>{detail.value}</p>
                     </div>
                 </div>
