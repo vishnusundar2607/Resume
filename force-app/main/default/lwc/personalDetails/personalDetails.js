@@ -6,7 +6,7 @@ import { NavigationMixin } from 'lightning/navigation';
 export default class PersonalDetails extends NavigationMixin(LightningElement) {
 
 
-    details = [{ name: 'Phone', IconName: RESUME_ICONS + '/Phone.png', value: '+91 99-444-75300' },
+    details = [{ name: 'Phone', IconName: RESUME_ICONS + '/Phone.png', value: '+91 7010300479' },
     { name: 'Email', IconName: RESUME_ICONS + '/Email.png', value: 'vishnusundar2607@gmail.com' },
     { name: 'Skype', IconName: RESUME_ICONS + '/Skype.png', value: 'vishnusundar2607' },
     { name: 'LinkedIn', IconName: RESUME_ICONS + '/Linkedin.png', value: 'linkedin.com/in/vishnusundar2607' },

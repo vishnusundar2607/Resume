@@ -1,0 +1,31 @@
+<template>
+    
+    <div class='full slds-var-p-around_large'>
+        <h1 class='header slds-align_absolute-center slds-var-p-around_x-small'>Projects</h1>
+        <template for:each={projectDetails} for:item="PD">
+            <div key={PD.Id} class='slds-var-p-around_large'>
+                <div class='slds-text-heading_medium slds-var-p-bottom_small'>
+                    <lightning-button-stateful data-key={PD.Id} label-when-off="" label-when-on=""
+                        icon-name-when-off="utility:chevronright" icon-name-when-on="utility:chevrondown" variant="text"
+                        selected={PD.showPoints} onclick={expand}>
+                    </lightning-button-stateful>
+                    {PD.Name}
+                </div>
+                <template if:true={PD.showPoints}>
+                    <div class='slds-text-heading_medium'>{PD.Role__c}</div>
+                    <div class='slds-var-p-bottom_small slds-text-heading_small'>
+                        <lightning-formatted-date-time value={PD.Start_Date__c} year="2-digit" month="short">
+                        </lightning-formatted-date-time> to
+                        <lightning-formatted-date-time class='slds-var-p-left_x-small' value={PD.End_Date__c}
+                            year="2-digit" month="short">
+                        </lightning-formatted-date-time>
+                    </div>
+                    <c-project-points project-id={PD.Id}></c-project-points>
+                </template>
+            </div>
+        </template>
+
+    </div>
+
+
+</template>

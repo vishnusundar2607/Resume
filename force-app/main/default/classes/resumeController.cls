@@ -32,6 +32,14 @@ public without sharing class resumeController {
     }
 
     @AuraEnabled(cacheable=true)
+    public static list<Summary__c> getProject(string projectName){
+        List<string> projectNames = projectName.split(';');
+        return [
+            SELECT Id,Name,Summary_Points__c,Role__c,Start_Date__c,End_Date__c FROM Summary__c WHERE Name IN :projectNames LIMIT 20
+        ];
+    }
+
+    @AuraEnabled(cacheable=true)
     public static list<Point__c> getProjectPoints(string projectID){
         return [
             SELECT Id,Name,Points__c,Summary__c FROM Point__c WHERE Summary__c = :projectID ORDER BY Order__c ASC NULLS LAST

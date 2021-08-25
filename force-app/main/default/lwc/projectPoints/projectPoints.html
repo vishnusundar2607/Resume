@@ -1,0 +1,17 @@
+<template>
+    <ul class="slds-list_vertical-space-medium">
+        <template for:each={ProjectPoint} for:item="points">
+          <li class="slds-item" key={points.Id}>
+            <div class="slds-grid">
+              <div class="slds-col slds-var-p-left_x-small slds-grow-none">
+                <lightning-icon icon-name="utility:pin" alternative-text="Connected" size="x-small">
+                </lightning-icon>
+              </div>
+              <div class="slds-col slds-var-p-left_x-small slds-text-heading_small slds-size_11-of-12">
+                <span>{points.Points__c}</span>
+              </div>
+            </div>
+          </li>
+        </template>
+      </ul>
+</template>
