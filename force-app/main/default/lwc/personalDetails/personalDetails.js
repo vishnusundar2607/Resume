@@ -13,8 +13,8 @@ export default class PersonalDetails extends NavigationMixin(LightningElement) {
     { name: 'Trailhead', IconName: RESUME_ICONS + '/Trailhead.png', value: 'trailblazer.me/id/vishnusundar2607' },
     { name: 'GitHub', IconName: RESUME_ICONS + '/GitHub.png', value: 'github.com/vishnusundar2607/Resume' },
     { name: 'Date Of Birth', IconName: RESUME_ICONS + '/DOB.png', value: '26/07/1992' },
-    { name: 'Home Address', IconName: RESUME_ICONS + '/HomeLocation.png', value: '18 A M.V.M Nagar, Karur Road, Dindigul-624001' },
-    { name: 'Current Address', IconName: RESUME_ICONS + '/Currenlocation2.png', value: 'Srikrishna’s “VRINDAVAN” Flat No: G1, Plot No. 30, Nethaji Street, Sri Raja Rajeswari Nagar, Madhanadhapuram, Porur, Chennai-125' }
+    { name: 'Home Address', IconName: RESUME_ICONS + '/HomeLocation.png', value: 'Home Address' },
+    { name: 'Current Address', IconName: RESUME_ICONS + '/Currenlocation2.png', value: 'Current Address' }
     ]
 
     @wire(MessageContext)
